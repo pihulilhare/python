@@ -1,0 +1,623 @@
+9,10,11,12
+
+#1. Write a python script for creating directory,displaying its contents. 
+
+# Create a file named Directory1.py
+#vi Directory1.py
+
+#In this file wirte code
+
+import os,sys
+
+os.mkdir("Priyanka")
+os.chdir("Priyanka")
+os.system("touch file1")
+os.system ("ls") # it will list all the files and directories
+os.system("cat file1") 
+
+
+======================================================================================================================================
+
+#2. Write a python script which will display system name ,node name and release details of current system.(error)
+#display node
+import os
+os.uname().nodename
+import platform
+platform.node()
+platform.system()
+platform.release()
+platform.version()
+import socket
+socket.gethostname()
+
+
+------------------------------------------
+
+import platform
+import sys
+
+def linux_distribution():
+  try:
+    return platform.linux_distribution()
+  except:
+    return "N/A"
+
+print("""Python version: %s
+dist: %s
+linux_distribution: %s
+system: %s
+machine: %s
+platform: %s
+uname: %s
+version: %s
+mac_ver: %s
+""" % (
+sys.version.split('\n'),
+str(platform.dist()),
+linux_distribution(),
+platform.system(),
+platform.machine(),
+platform.platform(),
+platform.uname(),
+platform.version(),
+platform.mac_ver(),
+))
+
+======================================================================================================================================
+
+3. Write a python standalone program for:
+             a. insert some values [eg. employee details]in db table.
+             b. fetch the same data and print it on standard output.
+             c. update specific employee info.
+             d. delete specific employee and all the info.
+
+3.a)
+
+import sqlite3
+conn = sqlite3.connect('employee.db')
+
+c = conn.cursor()
+
+# Create table
+c.execute('''CREATE TABLE Employee
+             (Emp_Id, Emp_Name, Salary, MobileNo)''')
+
+# Insert a row of data
+c.execute("INSERT INTO Employee VALUES ('50000','Priya Lilhare','30000',9907736969)")
+
+# Save (commit) the changes
+conn.commit()
+
+# We can also close the connection if we are done with it.
+# Just be sure any changes have been committed or they will be lost.
+conn.close()
+
+---------------------------------------------------------------------
+   b. fetch the same data and print it on standard output.
+
+
+#!/usr/bin/python
+
+import sqlite3
+
+conn = sqlite3.connect('test.db')
+print "Opened database successfully";
+
+cursor = conn.execute("SELECT id, name, address, salary from COMPANY")
+for row in cursor:
+   print "ID = ", row[0]
+   print "NAME = ", row[1]
+   print "ADDRESS = ", row[2]
+   print "SALARY = ", row[3], "\n"
+
+print "Operation done successfully";
+conn.close()
+---------------------------------------------------------------------------
+
+
+# c. update specific employee info.
+#!/usr/bin/python
+
+import sqlite3
+
+conn = sqlite3.connect('test.db')
+print "Opened database successfully";
+
+conn.execute("UPDATE COMPANY set SALARY = 25000.00 where ID = 1")
+conn.commit
+print "Total number of rows updated :", conn.total_changes
+
+cursor = conn.execute("SELECT id, name, address, salary from COMPANY")
+for row in cursor:
+   print "ID = ", row[0]
+   print "NAME = ", row[1]
+   print "ADDRESS = ", row[2]
+   print "SALARY = ", row[3], "\n"
+
+print "Operation done successfully";
+conn.close()
+
+---------------------------------------------------------------------------
+d. delete specific employee and all the info.
+
+
+
+#!/usr/bin/python
+
+import sqlite3
+
+conn = sqlite3.connect('test.db')
+print "Opened database successfully";
+
+conn.execute("DELETE from COMPANY where ID = 2;")
+conn.commit()
+print "Total number of rows deleted :", conn.total_changes
+
+cursor = conn.execute("SELECT id, name, address, salary from COMPANY")
+for row in cursor:
+   print "ID = ", row[0]
+   print "NAME = ", row[1]
+   print "ADDRESS = ", row[2]
+   print "SALARY = ", row[3], "\n"
+
+print "Operation done successfully";
+conn.close()
+
+
+-------------------------------------------------------------------------------------
+3.a.1) $ python
+Python 2.7.3 (default, Jan  2 2013, 16:53:07) 
+[GCC 4.7.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sqlite3
+>>> sqlite3.version
+'2.6.0'
+>>> sqlite3.sqlite_version
+'3.7.13'
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+======================================================================================================================================
+
+4. Write a Python program to count the number of lines in a text file.
+
+filename = "words.txt"
+numLines = 0
+numWords = 0
+numChars = 0
+
+# we are going to use for loop
+with open (filename, 'r') as file:
+	for line in file:
+		#Let's create a file for words
+		wordList = line.split()
+		numLines += 1
+		numWords += len(wordList)
+		numChars += len(line)
+print "Lines:%i\n Words:%i\n Characters:%i\n" %(numLines,numWords,numChars)
+
+O/P
+Lines 3
+Words 50
+Characters 31
+======================================================================================================================================
+
+5. Define a function that can accept two strings as input and concatenate them and then print it in console.
+
+def concatenateString(s1,s2):
+	print s1+s2
+concatenateString("Priya","Lilhare")  #PriyankaLilhare
+concatenateString("4","9") #49
+======================================================================================================================================
+
+6. Write a program that takes inputs from user their name and their age. And display the year in which they will turn 100 years old.
+#ERROR
+name = raw_input("Enter your name: ")
+age = int(raw_input("Enter Your age: "))
+year = str((2017 - age)+100)
+print(name + " will be 100 years old in the year " + year)
+
+======================================================================================================================================
+
+7. Python script which accept name from command line and print it to standard output.
+x = raw_input('What is your name?')
+print 'Your name is ' + x
+======================================================================================================================================
+
+8. Define a function max() that takes two numbers as arguments and returns the largest of them.  //https://www.youtube.com/watch?v=iBT2rrSt1wg
+
+def max (firstNo, secondNo):
+	if firstNo > secondNo:
+		return firstNo 
+	else:
+		return secondNo
+def getNumbersFromUser():
+	userFirstNo = int(input("enter First Number:"))
+	userSecondNo = int(input("enter Second Number:"))
+	return userFirstNo, userSecondNo
+def main():
+	userFirstNo, userSecondNo = getNumbersFromUser()
+	print ("The Maximum Numbers Between", userFirstNo,"and" , userSecondNo, "is" , max(userFirstNo, userSecondNo))
+main()
+
+======================================================================================================================================
+def max(a, b):
+    if a > b:
+        return a
+    elif b > a:
+        return b
+    else:
+        return None
+
+
+if __name__ == "__main__":
+    print max(2, 5)
+    print max(5, 2)
+    print max(5, 5)
+======================================================================================================================================
+9. Define a function max_of_three() that takes three numbers as arguments and returns the largest of them.  
+
+#ERROR
+
+def biggest(a, y, z):
+    Max = a
+    if y > Max:
+        Max = y    
+    if z > Max:
+        Max = z
+    if y > z:
+        Max = y
+    return Max
+------------------------------------------------
+
+#ERROR
+
+from ex1 import max
+def max_of_three(a, b, c):
+    max_temp = max(a, b)
+    return max(max_temp, c)
+if __name__ == "__main__":
+    print max_of_three(1, 2, 3)
+------------------------------------------------
+
+#ERROR
+
+function maxOfThree(a, b, c) {
+    if ((a >= b) && (a >= c)) { 
+        return a;
+    } else if ((b >= a) && (b >= c)) {
+        return b;
+    } else {
+        return c;
+    }
+}
+
+console.log(maxOfThree(343,35124,42));
+
+-----------------------------------------------------------
+
+def max_of_three(a,b,c):
+    #DocString
+    """ Function to find out the maximum of three numbers """
+  if a > b:
+        if a > c:
+            return a
+        else:
+            return c
+    else:
+        if b > c:
+            return b
+        else:
+            return c
+ 
+print ("Function to find the largest of three numbers")
+ 
+firstNumber=int(input("Enter the first  number"))
+
+secondNumber=int(input("Enter the second  number"))
+
+thirdNumber =int(input("Enter the third  number"))
+
+ 
+print ("Largest of " +str(firstNumber) +", " +str(secondNumber) +", " +str(thirdNumber) +" is " +str(max_of_three(firstNumber,secondNumber,thirdNumber)))
+
+
+ 
+======================================================================================================================================
+10.Define a function that computes the length of a given list or string.(ERRORS)
+
+10 A)
+def countStringLength(inputString):
+ #DocString
+ """ Function to calculate the string length"""
+ 
+	count = 0
+ 
+for i in inputString:
+	count = count+1
+ 
+print ("Length of the String is " +str(count))
+ 
+print ("Function to find the length of the input String")
+print ("Enter string")
+ 
+inputString = input()
+ 
+countStringLength(inputString)
+------------------------------------------------------------------------------
+10 B) Define a function that computes and returns the length of a given list.
+ 
+print ("")
+print ("Function to find the length of the List")
+ 
+List = [2,1,8,6,5,9,3]
+ 
+print ("The list is " +str(List))
+def countListLength(List):
+ #DocString
+ """ Function to calculate the list length"""
+ 
+ listCount = 0
+ 
+for i in List:
+ listCount = listCount+1
+ 
+return listCount
+ 
+print("Length of the list is " +str(countListLength(List)))
+======================================================================================================================================
+
+11.Write a program that accepts a sentence and calculate the number of letters and digits.
+              Suppose the following input is supplied to the program:
+              i/p: Hello Priya 1287
+              o/p: LETTERS 10
+                     DIGITS 4
+(ERROR)
+
+s = raw_input("Input a string")
+d=l=0
+for c in s:
+    if c.isdigit():
+        d=d+1
+    elif c.isalpha():
+        l=l+1
+    else:
+        pass
+print("Letters", l)
+print("Digits", d)
+-------------------------------------------------
+
+s = raw_input("Enter the Sentence")
+d={"DIGITS":0, "LETTERS":0}
+for c in s:
+    if c.isdigit():
+        d["DIGITS"]+=1
+    elif c.isalpha():
+        d["LETTERS"]+=1
+    else:
+        pass
+print "LETTERS", d["LETTERS"]
+print "DIGITS", d["DIGITS"]
+
+======================================================================================================================================
+
+12.Define a class which has two methods: getString: to get a string from console input. printString: to print the string in upper case.
+
+(ERROR)
+
+class IOString():
+    def __init__(self):
+        self.str1 = ""
+
+    def get_String(self):
+        self.str1 = input()
+
+    def print_String(self):
+        print(self.str1.upper())
+
+str1 = IOString()
+str1.get_String()
+str1.print_String()
+======================================================================================================================================
+                                                                   
+13. With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line.
+
+tp=(1,2,3,4,5,6,7,8,9,10)
+tp1=tp[:5]
+tp2=tp[5:]
+print tp1
+print tp2
+
+
+======================================================================================================================================
+
+14. Write a program to read an ASCII string and to convert it to a unicode string encoded by utf-8.
+
+
+>>> a=u"aaaàçççñññ"
+>>> type(a)
+<type 'unicode'>
+>>> a.encode('ascii','ignore')
+'aaa'
+>>> a.encode('ascii','replace')
+'aaa???????'
+>>>
+---------------------------------------------
+>>> s= u'£10'
+>>> s.encode('utf8')
+'\xc2\x9c10'
+>>> s.encode('utf16')
+'\xff\xfe\x9c\x001\x000\x00'
+------------------------------------------
+
+import unicodedata    
+raw_text = u"here $%6757 dfgdfg"
+convert_text = unicodedata.normalize('NFKD', raw_text).encode('ascii','ignore')
+=-------------------------------------------------------------------------------------------
+
+s = raw_input("Enter the ASCII Value")
+u = unicode( s ,"utf-8")
+print u
+
+
+======================================================================================================================================
+
+15. Write a program to shuffle and print the list [3,6,7,8].
+
+from random import shuffle
+li = [3,6,7,8]
+shuffle(li)
+print li
+---------------------------------------------------------------------
+
+from random import shuffle
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+shuffle(color)
+print(color)
+
+======================================================================================================================================
+
+16. Write a program to print the list after removing delete even numbers in [5,6,77,45,22,12,24].
+
+def remove_even(l):
+    for i in l:
+        if i % 2 != 0:
+            l.remove(i)
+    print l
+    return l
+
+remove_even([5,6,77,45,22,12,24])
+remove_even([4,5,4,7,9,11])
+remove_even([5,6,77,45,22,12,24])
+
+======================================================================================================================================
+
+17. With two given lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], write a program to make a list whose elements are intersection of the above given lists.
+
+ef intersect(a, b):
+    """ return the intersection of two lists """
+    return list(set(a) & set(b))
+
+if __name__ == "__main__": 
+    a = [1,3,6,78,35,55]
+    b = [12,24,35,24,88,120,155]
+    print intersect(a, b)
+   
+======================================================================================================================================
+
+18. Write a program which accepts a string from console and print it in reverse order.
+
+(ERROR)
+# Program to check if a string
+ is palindrome or not
+
+
+
+# change this value for a different output
+
+
+my_str = 'aIbohPhoBiA'
+
+
+
+# make it suitable for caseless comparison
+
+
+my_str = my_str.casefold()
+
+
+
+# reverse the string
+
+
+rev_str = reversed(my_str)
+
+
+
+# check if the string is equal to its reverse
+
+
+if list(my_str) == list(rev_str):
+
+   print("It is palindrome")
+
+else:
+
+   print("It is not palindrome")
+----------------------------------------------------
+
+s=raw_input("Enter String")
+s = s[::-1]
+print s
+
+
+======================================================================================================================================
+
+19. Write a function find_longest_word() that takes a list of words and returns the length of the longest one. 
+
+//https://stackoverflow.com/questions/29162789/how-to-write-a-function-that-returns-the-length-of-the-longest-word
+
+
+def find_longest_word(text):
+    longest_word = max(text.split(), key = len)
+    return longest_word, len(longest_word)
+
+---------------------------------------------------------
+
+def find_longest_word(text):
+    for words in text.split():
+        if len(words) > longest:
+            longest = len(words)
+            longest_word = words
+    return longest_word, len(longest_word)
+
+def main():
+    input_string = input("Please input a list of words to evaluate: ")
+    longest_word = find_longest_word(input_string)
+    print("The longest word is", longest_word, "with length", len(longest_word))
+--------------------------------------------------------------------------------------
+def main ():
+    text = input("Please input a List of words to evaluate: ")
+
+    longest = 0
+
+    for words in text.split():
+           if len(words) > longest:
+                  longest = len(words)
+    print ("The longest word is", words, "with lenght", longest)
+
+
+main()
+
+----------------------------------------------------------------------------------------------
+//http://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-8.php
+(CORRECT)
+
+def find_longest_word(words_list):
+    word_len = []
+    for n in words_list:
+        word_len.append((len(n), n))
+    word_len.sort()
+    return word_len[-1][1]
+
+print(find_longest_word(["PHP", "Exercises", "Backend"]))
+======================================================================================================================================
+
+20. Ask the user for a string and print out whether this string is a palindrome or not. (A palindrome is a string that reads the same forwards and backwards.)
+(CORRECT)
+n=raw_input("Enter the String:")
+def palindrome(n):
+    index=0
+    check=True
+    while index<len(n):
+        if n[index]==n[-1-index]:
+            index+=1
+            return True
+        return False
+if palindrome(n)==True:
+    print "It is a Palindrome"
+else:
+    print "It is not a Palindrome"
+======================================================================================================================================
+
