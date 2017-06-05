@@ -13,7 +13,7 @@ if __name__ == "__main__":
     print max(5, 2)
     print max(5, 5)'''
     
-    def max (firstNo, secondNo):
+def max (firstNo, secondNo):
 	if firstNo > secondNo:
 		return firstNo
 	else:
