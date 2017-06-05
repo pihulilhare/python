@@ -2,3 +2,8 @@
 x = raw_input('What is your name?')
 
 print 'Your name is ' + x
+
+'''output
+[root@test python]# python program7.py
+What is your name? Priyanka Lilhare
+Your name is  Priyanka Lilhare'''
