@@ -1,7 +1,7 @@
 #1. Write a python script for creating directory,displaying its contents. 
 
 # Create a file named Directory1.py
-#vi Directory1.py
+vi Directory1.py
 
 #In this file wirte code
 
