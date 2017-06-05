@@ -4,17 +4,14 @@
               o/p: LETTERS 10
                      DIGITS 4'''
 
-
-
-
-s = input("Input a string")
-d=l=0
+s = raw_input("Enter the Sentence")
+d={"DIGITS":0, "LETTERS":0}
 for c in s:
     if c.isdigit():
-        d=d+1
+        d["DIGITS"]+=1
     elif c.isalpha():
-        l=l+1
+        d["LETTERS"]+=1
     else:
         pass
-print("Letters", l)
-print("Digits", d)
+print "LETTERS", d["LETTERS"]
+print "DIGITS", d["DIGITS"]
