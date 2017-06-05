@@ -25,3 +25,8 @@ def main():
 	userFirstNo, userSecondNo = getNumbersFromUser()
 	print ("The Maximum Numbers Between", userFirstNo,"and" , userSecondNo, "is" , max(userFirstNo, userSecondNo))
 main()
+'''output
+[root@test python]# python program8.py
+enter First Number:50
+enter Second Number:40
+('The Maximum Numbers Between', 50, 'and', 40, 'is', 50)'''
