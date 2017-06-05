@@ -12,3 +12,9 @@ if palindrome(n)==True:
     print "It is a Palindrome"
 else:
     print "It is not a Palindrome"
+
+    #output   
+'''[root@test python]# python program20.py
+Enter the String:madam
+It is a Palindrome
+[root@test python]# '''
