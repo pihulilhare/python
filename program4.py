@@ -13,4 +13,10 @@ with open (filename, 'r') as file:
 		numLines += 1
 		numWords += len(wordList)
 		numChars += len(line)
-print "Lines:%i\n Words:%i\n Characters:%i\n" %(numLines,numWords,numChars)
+print "Lines:%i\nWords:%i\nCharacters:%i\n" %(numLines,numWords,numChars)
+
+'''output
+[root@test python]# python program4.py
+Lines:3
+Words:11
+Characters:59'''
