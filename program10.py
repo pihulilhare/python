@@ -1,4 +1,4 @@
-#10.Define a function that computes the length of a given list or string.
+raw_#10.Define a function that computes the length of a given list or string.
 
 def countStringLength(inputString):
 #DocString
@@ -9,5 +9,5 @@ def countStringLength(inputString):
 	print ("Length of the String is " +str(count))
 	print ("Function to find the length of the input String")
 print ("Enter string")
-inputString = input()
+inputString = raw_input()
 countStringLength(inputString)
