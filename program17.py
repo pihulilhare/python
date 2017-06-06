@@ -10,4 +10,6 @@ if __name__ == "__main__":
     print intersect(a, b)
     
 '''output
-[root@test python]# python program17.py[35]'''
+[root@test python]# python program17.py
+[35]
+'''
