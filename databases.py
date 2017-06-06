@@ -7,7 +7,6 @@ c = conn.cursor()
 
 c.execute('''CREATE TABLE Employee (Emp_Id, Emp_Name, Salary, MobileNo)''')
 print "Operation done successfully";
-
 # Insert a row of data
 
 c.execute("INSERT INTO Employee VALUES ('1','Priya Lilhare','30000',9907736969)")
@@ -16,9 +15,8 @@ print "Operation done successfully";
 #Display Data
 
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
-for row in cursor:
-   print "Emp_Id = ", row[0]
-   print "Emp_Name = ", row[1]
+for row in c:
+   print "Emp_Id = ", row[0]   print "Emp_Name = ", row[1]
    print "Salary = ", row[2]
    print "MobileNo = ", row[3], "\n"
 print "Operation done successfully";
@@ -31,7 +29,7 @@ print "Total number of rows updated :", conn.total_changes
 #Display Data
 
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
-for row in cursor:
+for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
    print "Salary = ", row[2]
@@ -47,7 +45,7 @@ print "Operation done successfully";
 #Display Data
 
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
-for row in cursor:
+for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
    print "Salary = ", row[2]
@@ -59,7 +57,7 @@ print "Updataion done successfully";
 conn.execute("DELETE from Employee where ID = 2;")
 print "Total number of rows deleted :", conn.total_changes
 cursor = conn.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
-for row in cursor:
+for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
    print "Salary = ", row[2]
