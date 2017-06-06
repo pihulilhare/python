@@ -23,17 +23,16 @@ print "Updation done successfully";
 print "Total number of rows updated :", conn.total_changes
 
 #Display Data
-c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
+Tc.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
-   print "Salary = ", row[2]
-   print "MobileNo = ", row[3], "\n"
+   print "Salary = ", row[2]   print "MobileNo = ", row[3], "\n"
 print "Display updated Data";
 # Insert a row of data
 c.execute("INSERT INTO Employee VALUES ('2','Yatika Verma','40000',8989166152)")
 print "Insertion done successfully";
-#Display Data
+U#Display Data
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
@@ -43,13 +42,13 @@ for row in c:
 print "Display updated Data";
 #Delete data
 c.execute("DELETE from Employee where Emp_Id = 2;")
-print "Total number of rows deleted :", conn.total_changes
+Oprint "Total number of rows deleted :", conn.total_changes
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
    print "Salary = ", row[2]
-   print "MobileNo = ", row[3], "\n"
+U   print "MobileNo = ", row[3], "\n"
 print "Deletion done successfully";
 #Display Data
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
@@ -63,3 +62,61 @@ conn.commit()
 # We can also close the connection if we are done with it.
 # Just be sure any changes have been committed or they will be lost.
 conn.close()
+'''OUTPUT
+Table Creation done successfully
+Insertion done successfully
+
+Emp_Id =  1
+Emp_Name =  Priya Lilhare
+Salary =  30000
+MobileNo =  9907736969 
+
+Display done successfully
+Updation done successfully
+Total number of rows updated : 1
+
+Emp_Id =  1
+Emp_Name =  Priya Lilhare
+Salary =  30000
+MobileNo =  9907736969 
+
+Display updated Data
+
+Insertion done successfully
+
+Emp_Id =  1
+Emp_Name =  Priya Lilhare
+Salary =  30000
+MobileNo =  9907736969 
+
+Emp_Id =  2
+Emp_Name =  Yatika Verma
+Salary =  40000
+MobileNo =  8989166152
+
+Display updated Data
+Total number of rows deleted : 2
+Emp_Id =  1
+Emp_Name =  Priya Lilhare
+Salary =  30000
+MobileNo =  9907736969 
+
+Emp_Id =  2
+Emp_Name =  Yatika Verma
+Salary =  40000
+MobileNo =  8989166152 
+
+Deletion done successfully
+
+Emp_Id =  1
+Emp_Name =  Priya Lilhare
+Salary =  30000
+
+Emp_Id =  2
+Emp_Name =  Yatika Verma
+Salary =  40000
+
+Display updated Data
+
+[root@test python]# '''
+
