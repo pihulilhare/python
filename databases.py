@@ -15,8 +15,10 @@ for row in c:
    print "Salary = ", row[2]
    print "MobileNo = ", row[3], "\n"
 print "Display done successfully";
+
 #Update Data
 c.execute("UPDATE Employee  set Salary = 50000 where Emp_Id = 1")
+
 print "Updation done successfully";
 print "Total number of rows updated :", conn.total_changes
 
@@ -37,6 +39,7 @@ for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
    print "Salary = ", row[2]
+   print "MobileNo = ", row[3], "\n"
 print "Display updated Data";
 #Delete data
 c.execute("DELETE from Employee where Emp_Id = 2;")
