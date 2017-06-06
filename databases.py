@@ -24,10 +24,9 @@ print "Display done successfully";
 
 #Update Data
 c.execute("UPDATE Employee  set Salary = 50000 where Emp_Id = 1")
-conn.commit() 
+c.commit() 
 print "Updation done successfully";
 print "Total number of rows updated :", conn.total_changes
-
 #Display Data
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
@@ -51,7 +50,7 @@ print "Display updated Data";
 
 #Delete data
 c.execute("DELETE from Employee where Emp_Id = 2;")
-conn.commit() 
+c.commit() 
 print "Total number of rows deleted :", conn.total_changes
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
