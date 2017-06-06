@@ -18,12 +18,12 @@ print "Display done successfully";
 
 #Update Data
 c.execute("UPDATE Employee  set Salary = 50000 where Emp_Id = 1")
-
+conn.commit() 
 print "Updation done successfully";
 print "Total number of rows updated :", conn.total_changes
 
 #Display Data
-Tc.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
+c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
@@ -32,7 +32,7 @@ print "Display updated Data";
 # Insert a row of data
 c.execute("INSERT INTO Employee VALUES ('2','Yatika Verma','40000',8989166152)")
 print "Insertion done successfully";
-U#Display Data
+#Display Data
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
@@ -42,13 +42,13 @@ for row in c:
 print "Display updated Data";
 #Delete data
 c.execute("DELETE from Employee where Emp_Id = 2;")
-Oprint "Total number of rows deleted :", conn.total_changes
+print "Total number of rows deleted :", conn.total_changes
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
    print "Salary = ", row[2]
-U   print "MobileNo = ", row[3], "\n"
+   print "MobileNo = ", row[3], "\n"
 print "Deletion done successfully";
 #Display Data
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
