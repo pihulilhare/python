@@ -1,5 +1,4 @@
 #9. Define a function max_of_three() that takes three numbers as arguments and returns the largest of them.  
-
 import max
 def max_of_three(a, b, c):
     max_temp = max(a, b)
