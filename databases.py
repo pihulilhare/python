@@ -38,7 +38,7 @@ for row in c:
    print "MobileNo = ", row[3], "\n"
 print "Operation done successfully";
 #Delete data
-c.execute("DELETE from Employee where ID = 2;")
+c.execute("DELETE from Employee where Emp_Id = 2;")
 print "Total number of rows deleted :", conn.total_changes
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
