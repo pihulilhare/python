@@ -16,7 +16,7 @@ for row in c:
    print "MobileNo = ", row[3], "\n"
 print "Operation done successfully";
 #Update Data
-c.execute("UPDATE Employee  set Salary = 50000 where ID = 1")
+c.execute("UPDATE Employee  set Salary = 50000 where Emp_Id = 1")
 print "Total number of rows updated :", conn.total_changes
 #Display Data
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
