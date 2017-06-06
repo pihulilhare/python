@@ -16,8 +16,9 @@ print "Operation done successfully";
 
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
-   print "Emp_Id = ", row[0]   print "Emp_Name = ", row[1]
-   print "Salary = ", row[2]
+    print "Emp_Id = ", row[0],
+   print "Emp_Name = ", row[1],
+   print "Salary = ", row[2],
    print "MobileNo = ", row[3], "\n"
 print "Operation done successfully";
 
@@ -30,9 +31,9 @@ print "Total number of rows updated :", conn.total_changes
 
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
-   print "Emp_Id = ", row[0]
-   print "Emp_Name = ", row[1]
-   print "Salary = ", row[2]
+   print "Emp_Id = ", row[0],
+   print "Emp_Name = ", row[1],
+   print "Salary = ", row[2],
    print "MobileNo = ", row[3], "\n"
 print "Updataion done successfully";
 
@@ -46,9 +47,9 @@ print "Operation done successfully";
 
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
-   print "Emp_Id = ", row[0]
-   print "Emp_Name = ", row[1]
-   print "Salary = ", row[2]
+    print "Emp_Id = ", row[0],
+   print "Emp_Name = ", row[1],
+   print "Salary = ", row[2],
    print "MobileNo = ", row[3], "\n"
 print "Updataion done successfully";
 
@@ -58,9 +59,9 @@ conn.execute("DELETE from Employee where ID = 2;")
 print "Total number of rows deleted :", conn.total_changes
 cursor = conn.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
-   print "Emp_Id = ", row[0]
-   print "Emp_Name = ", row[1]
-   print "Salary = ", row[2]
+    print "Emp_Id = ", row[0],
+   print "Emp_Name = ", row[1],
+   print "Salary = ", row[2],
    print "MobileNo = ", row[3], "\n"
 print "Operation done successfully";
 
