@@ -33,7 +33,8 @@ c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
    print "Emp_Name = ", row[1]
-   print "Salary = ", row[2]   print "MobileNo = ", row[3], "\n"
+   print "Salary = ", row[2]   
+   print "MobileNo = ", row[3], "\n"
 print "Display updated Data";
 # Insert a row of data
 c.execute("INSERT INTO Employee VALUES ('2','Yatika Verma','40000',8989166152)")
