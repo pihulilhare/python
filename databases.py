@@ -2,7 +2,13 @@ import sqlite3
 conn = sqlite3.connect('employee.db')
 c = conn.cursor()
 # Create table
+
+'''cur.execute("DROP TABLE IF EXISTS Cars")
+   cur.execute("CREATE TABLE Cars(Id INT, Name TEXT, Price INT)")
+   cur.executemany("INSERT INTO Cars VALUES(?, ?, ?)", cars)'''
+c.execute("DROP TABLE IF EXISTS Employee")
 c.execute('''CREATE TABLE Employee (Emp_Id, Emp_Name, Salary, MobileNo)''')
+
 print "Table Creation done successfully";
 # Insert a row of data
 c.execute("INSERT INTO Employee VALUES ('1','Priya Lilhare','30000',9907736969)")
