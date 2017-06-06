@@ -9,5 +9,5 @@ def countStringLength(inputString):
 	print ("Length of the String is " +str(count))
 	print ("Function to find the length of the input String")
 print ("Enter string")
-inputString = raw_input()
+inputString = input()
 countStringLength(inputString)
