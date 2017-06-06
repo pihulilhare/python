@@ -48,6 +48,13 @@ for row in c:
    print "Salary = ", row[2]
    print "MobileNo = ", row[3], "\n"
 print "Deletion done successfully";
+#Display Data
+c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
+for row in c:
+   print "Emp_Id = ", row[0]
+   print "Emp_Name = ", row[1]
+   print "Salary = ", row[2]
+print "Display updated Data";
 # Save (commit) the changes
 conn.commit()
 # We can also close the connection if we are done with it.
