@@ -8,3 +8,6 @@ if __name__ == "__main__":
     a = [1,3,6,78,35,55]
     b = [12,24,35,24,88,120,155]
     print intersect(a, b)
+    
+'''output
+[root@test python]# python program17.py[35]'''
