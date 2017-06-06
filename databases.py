@@ -36,6 +36,7 @@ for row in c:
    print "Salary = ", row[2]   
    print "MobileNo = ", row[3], "\n"
 print "Display updated Data";
+
 # Insert a row of data
 c.execute("INSERT INTO Employee VALUES ('2','Yatika Verma','40000',8989166152)")
 print "Insertion done successfully";
@@ -47,8 +48,10 @@ for row in c:
    print "Salary = ", row[2]
    print "MobileNo = ", row[3], "\n"
 print "Display updated Data";
+
 #Delete data
 c.execute("DELETE from Employee where Emp_Id = 2;")
+conn.commit() 
 print "Total number of rows deleted :", conn.total_changes
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
@@ -57,7 +60,9 @@ for row in c:
    print "Salary = ", row[2]
    print "MobileNo = ", row[3], "\n"
 print "Deletion done successfully";
+
 #Display Data
+
 c.execute("SELECT Emp_Id, Emp_Name, Salary, MobileNo from Employee")
 for row in c:
    print "Emp_Id = ", row[0]
