@@ -1,6 +1,7 @@
 #10.Define a function that computes the length of a given list or string.
 
 def countStringLength(inputString):
+	
  #DocString
  # Function to calculate the string length
 	count = 0
