@@ -15,3 +15,10 @@ for c in s:
         pass
 print "LETTERS", d["LETTERS"]
 print "DIGITS", d["DIGITS"]
+
+
+'''Output
+[root@test python]# python program11.py
+Enter the Sentence This Is The Python String
+LETTERS 21
+DIGITS 0'''
