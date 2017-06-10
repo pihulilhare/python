@@ -1,4 +1,4 @@
-output#8. Define a function max() that takes two numbers as arguments and returns the largest of them.
+#8. Define a function max() that takes two numbers as arguments and returns the largest of them.
 '''def max(a, b):
     if a > b:
         return a
