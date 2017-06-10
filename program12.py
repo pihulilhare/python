@@ -13,3 +13,8 @@ class IOString():
 str1 = IOString()
 str1.getString()
 str1.printString()
+
+'''Output
+[root@test python]# python program12.py
+Enter the string priyanka lilhare
+PRIYANKA LILHARE'''
