@@ -5,7 +5,7 @@ class IOString():
         self.str1 = ""
 
     def getString(self):
-        self.str1 = input()
+        self.str1 = raw_input()
 
     def printString(self):
         print(self.str1.upper())
