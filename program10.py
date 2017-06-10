@@ -7,7 +7,13 @@ def countStringLength(inputString):
 	for i in inputString:
 		count = count+1
 	print ("Length of the String is " +str(count))
-	print ("Function to find the length of the input String")
 print ("Enter string")
 inputString = raw_input()
 countStringLength(inputString)
+
+'''Output
+[root@test python]# python program10.py
+Enter string
+Priyanka Lilhare
+Length of the String is 16
+'''
