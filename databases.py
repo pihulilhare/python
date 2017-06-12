@@ -23,7 +23,7 @@ for row in c:
 print "Display done successfully";
 
 #Update Data
-c.execute("UPDATE Employee  set Salary = 50000 where Emp_Id = 1")
+c.execute("update Employee  set Salary = 50000 where Emp_Id = 1")
 conn.commit() 
 print "Updation done successfully";
 print "Total number of rows updated :", conn.total_changes
